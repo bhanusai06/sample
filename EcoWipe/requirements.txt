@@ -1,3 +1,7 @@
-PyQt6
-qrcode[pil]
-pyinstaller
+PyQt6>=6.6.0
+wmi>=1.5.1
+cryptography>=42.0.0
+qrcode>=7.4.2
+opencv-python>=4.9.0
+numpy>=1.26.0
+pywin32>=306
