@@ -10,7 +10,7 @@ MAX_DRIVE_SIZE_BYTES: Final[int] = 100 * 1024**4     # 100 TB max supported
 
 # Logging Configuration
 LOG_DIR: Final[str] = "logs"
-LOG_FORMAT: Final[str] = "[%(asctime)s] [%(levelname)s] [%(module)s] [%(funcName)s] %(message)s"
+LOG_FORMAT: Final[str] = "[%(asctime)s] [%(levelname)s] [%(custom_module)s] [%(custom_funcName)s] %(message)s"
 DATE_FORMAT: Final[str] = "%Y-%m-%dT%H:%M:%SZ"
 
 # Cryptography

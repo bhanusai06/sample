@@ -70,11 +70,11 @@ certificate_logger = _setup_logger("certificate", "certificate.log")
 security_logger = _setup_logger("security", "security.log")
 error_logger = _setup_logger("error", "error.log", level=logging.ERROR)
 
-def log_security_event(module: str, function: str, message: str) -> None:
+def log_security_event(module_name: str, function_name: str, message: str) -> None:
     """Log a security-critical event."""
-    # We inject module and funcName via extra to override the caller info
-    security_logger.warning(message, extra={"module": module, "funcName": function})
+    # We inject custom_module and custom_funcName via extra to avoid overwriting built-in LogRecord attributes
+    security_logger.warning(message, extra={"custom_module": module_name, "custom_funcName": function_name})
 
-def log_error_event(module: str, function: str, message: str, exc_info: bool = False) -> None:
+def log_error_event(module_name: str, function_name: str, message: str, exc_info: bool = False) -> None:
     """Log an error event."""
-    error_logger.error(message, exc_info=exc_info, extra={"module": module, "funcName": function})
+    error_logger.error(message, exc_info=exc_info, extra={"custom_module": module_name, "custom_funcName": function_name})
